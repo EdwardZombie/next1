@@ -142,7 +142,9 @@ const MainContainer = ({children, keywords, title, description}) => {
                                                 <Link href="/shop">
                                                 <a>Магазин</a>
                                                 </Link>
-                                                <ul><MainCategoryMenu></MainCategoryMenu></ul>
+                                                <ul>
+                                                    <MainCategoryMenu></MainCategoryMenu>
+                                                </ul>
 
                                             </li>
                                             <li className="menu-item-has-children">

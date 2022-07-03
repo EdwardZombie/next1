@@ -1,74 +1,86 @@
 import React, {useState, useEffect} from "react";
+import { useRouter } from 'next/router'
 import axios from "axios";
-import Blogs5k from "../../components/Blogs5k";
-import Pagination from "../../components/Pagination";
 import MainContainer from "/components/MainContainer";
-import Link from "next/link";
+import Items from "/components/Items";
+import Pagination from "../../components/Pagination";
 
+const ItemsPage = () => {
 
-const Blog5Kanal = ({params}) => {
+    const router = useRouter()
+    const { slug } = router.query
 
-    const [blogs, setBlogs] = useState([])
+    const [items, setItems] = useState([])
     const [loading, setLoading] = useState(false)
     const [currrentPage, setCurrrentPage] = useState(1)
-    const [blogsPerPage] = useState(15)
+    const [itemsPerPage] = useState(12)
 
     useEffect(() => {
-        const getBlogs = async () => {
+        const getItems = async () => {
             setLoading(true)
-            const res = await axios.get(`http://prokansk.ru/api/v1/shop/${params.slug}`)
-            setBlogs(res.data)
+            const res = await axios.get(`http://prokansk.ru/api/v1/shop/${slug}`)
+            console.log('sdfgsdfgsdfgsdfg - ', res.data)
+            setItems(res.data)
             setLoading(false)
         }
-        getBlogs()
+        getItems()
     }, [])
 
-    const lastBlogIndex = currrentPage * blogsPerPage
-    const firstBlogIndex = lastBlogIndex - blogsPerPage
-    const currentBlog = blogs.slice(firstBlogIndex, lastBlogIndex)
+
+    const lastItemIndex = currrentPage * itemsPerPage
+    const firstItemIndex = lastItemIndex - itemsPerPage
+    const currentItem = items.slice(firstItemIndex, lastItemIndex)
 
     const paginate = pageNumber => setCurrrentPage(pageNumber)
     const nextPage = () => setCurrrentPage(prev => prev+1)
     const prevPage = () => setCurrrentPage(prev => prev-1)
+
 
     return (
         <MainContainer keywords={"Объявления, 5 канал, Канск"} title={"Объявления Пятого канала"}>
             <section className="page-header style-2">
                 <div className="container">
                     <div className="page-title text-center">
-                        <h3>Канск 5 канал объявления</h3>
+                        <h3>Our Products page</h3>
                         <ul className="breadcrumb">
-                            <li>
-                                <Link href="/">
-                                    <a>Главная</a>
-                                </Link>
-                            </li>
-                            <li>Бегущая строка телеканала Канск 5 канал</li>
+                            <li><a href="index.html">Home</a></li>
+                            <li>Shop Page</li>
                         </ul>
                     </div>
                 </div>
             </section>
 
-            <section className="blog-section blog-page padding-tb">
+
+            <div className="shop-page single padding-tb bg-fa">
                 <div className="container">
                     <div className="section-wrapper">
-                        <div className="row justify-content-center">
-
-                            <Blogs5k blogs={currentBlog} loading={loading} />
+                        <div className="shop-title d-flex flex-wrap justify-content-between">
+                            <p>Showing 01 - 12 of 139 Results</p>
+                            <div className="product-view-mode">
+                                <a className="active" data-target="grid"><i className="icofont-ghost" /></a>
+                            </div>
                         </div>
-                        <Pagination
-                            blogsPerPage={blogsPerPage}
-                            totalBlogs={blogs.length}
-                            paginate={paginate}
-                            currentBlog={currentBlog}
-                        />
-                        <button className="btn btn-primary" onClick={prevPage}>Prev</button>
-                        <button className="btn btn-primary" onClick={nextPage}>Next</button>
+
+                        <div className="shop-product-wrap grid row">
+
+
+            <Items items={currentItem} loading={loading} />
+
+                        </div>
+                        <div className="shop-product-wrap grid row">
+                            <Pagination
+                                blogsPerPage={itemsPerPage}
+                                totalBlogs={items.length}
+                                paginate={paginate}
+                                currentBlog={currentItem}
+                            />
+                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
+
         </MainContainer>
     );
 };
 
-export default Blog5Kanal;
+export default ItemsPage;
