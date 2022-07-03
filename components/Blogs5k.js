@@ -19,7 +19,7 @@ function toTimestamp(strDate){
 
 const Blogs5K = ({ blogs, loading }) => {
     if(loading) {
-        return <h2>Загрузка страницы...</h2>
+        return <h3>Подгружаю бегущую строку 5-го канала...</h3>
     }
     return (
         <>

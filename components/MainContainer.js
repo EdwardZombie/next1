@@ -1,8 +1,9 @@
 import Head from "next/head";
 import Link from "next/link";
+import MainCategoryMenu from "../components/MainCategoryMenu";
 
 
-const MainContainer = ({children, keywords, title}) => {
+const MainContainer = ({children, keywords, title, description}) => {
     return (
         <>
             <Head>
@@ -12,10 +13,10 @@ const MainContainer = ({children, keywords, title}) => {
                 <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
                 <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png" />
 
-
-
                 <title>{title}</title>
-                <meta keywords={keywords}></meta>
+                <meta name="keywords" content={keywords} />
+                <meta name="description" content={description} />
+                <meta name="author" content="Веб студия Zoomcode.ru" />
 
 
 
@@ -61,9 +62,7 @@ const MainContainer = ({children, keywords, title}) => {
                                 </li>
                                 <li><a href="/shop">Магазин</a>
                                     <ul>
-                                        <li><a href="about.html">О нас</a></li>
-                                        <li><a href="coming-soon.html">Coming Soon</a></li>
-                                        <li><a href="404.html">404</a></li>
+                                        <MainCategoryMenu></MainCategoryMenu>
                                     </ul>
                                 </li>
 
@@ -139,35 +138,46 @@ const MainContainer = ({children, keywords, title}) => {
                                                 <a href="/">Главная</a>
                                                 </Link>
                                             </li>
-                                            <li><a href="/shop">Магазин</a>
-                                                <ul>
-                                                    <li><a href="#">Бакалея</a></li>
-                                                    <li><a href="#">Консервы</a></li>
-                                                    <li><a href="#">Напитки</a></li>
-                                                    <li><a href="#">Молочная продукция</a></li>
-                                                    <li><a href="#">Майонез кетчуп заправки</a></li>
-                                                    <li><a href="#">Специи приправа</a></li>
-                                                    <li><a href="#">Кондитерские изделия</a></li>
-                                                    <li><a href="#">Чипсы снеки</a></li>
-                                                </ul>
+                                            <li className="menu-item-has-children">
+                                                <Link href="/shop">
+                                                <a>Магазин</a>
+                                                </Link>
+                                                <ul><MainCategoryMenu></MainCategoryMenu></ul>
+
                                             </li>
-                                            <li>
+                                            <li className="menu-item-has-children">
                                                 <Link href="/blog">
                                                 <a>Блог</a>
                                                 </Link>
                                                 <ul>
-                                                    <li><a href="blog.html">Статьи</a></li>
                                                     <li>
-                                                        <Link href="/blog5kanal">
-                                                        <a>Объявления 5 канал</a>
+                                                        <Link href="/blog/prokansk">
+                                                        <a>Статьи</a>
                                                         </Link>
                                                     </li>
-                                                    <li><a href="blog-single.html">Объявления Лимон ТВ</a></li>
+                                                    <li>
+                                                        <Link href="/blog5kanal">
+                                                            <a>Объявления 5 канал</a>
+                                                        </Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link href="/bloglimontv">
+                                                            <a>Объявления Лимон ТВ</a>
+                                                        </Link>
+                                                    </li>
                                                 </ul>
                                             </li>
-                                            <li><a href="/about">О нас</a></li>
+                                            <li>
+                                                <Link href="/about">
+                                                    <a>О нас</a>
+                                                </Link>
+                                            </li>
 
-                                            <li><a href="/contact">Контакты</a></li>
+                                            <li>
+                                                <Link href="/contact">
+                                                    <a>Контакты</a>
+                                                </Link>
+                                            </li>
                                         </ul>
                                     </div>
                                     <div className="cart-search">
@@ -283,7 +293,7 @@ const MainContainer = ({children, keywords, title}) => {
                     <div className="row justify-content-center">
                         <div className="col-xl-4 col-lg-4 col-md-6 col-12">
                             <div className="contant-info">
-                                <h5>Contact info</h5>
+                                <h5>Контактная информация</h5>
                                 <ul className="info">
                                     <li>
                                         <i className="fas fa-home"></i>
@@ -314,40 +324,51 @@ const MainContainer = ({children, keywords, title}) => {
                                 <h5>Opening Hours</h5>
                                 <ul>
                                     <li>
-                                        <p><i className="far fa-clock"></i>Saterday</p>
-                                        <span>06:00 am - 08:00 pm</span>
+                                        <p><i className="far fa-clock"></i>Понедельник</p>
+                                        <span>09:00 - 23:00</span>
                                     </li>
                                     <li>
-                                        <p><i className="far fa-clock"></i>Sunday</p>
-                                        <span>09:00 am - 02:00 pm</span>
+                                        <p><i className="far fa-clock"></i>Вторник</p>
+                                        <span>09:00 - 23:00</span>
                                     </li>
                                     <li>
-                                        <p><i className="far fa-clock"></i>Monday</p>
-                                        <span>07:00 am - 09:00 pm</span>
+                                        <p><i className="far fa-clock"></i>Среда</p>
+                                        <span>09:00 - 23:00</span>
                                     </li>
                                     <li>
-                                        <p><i className="far fa-clock"></i>Tuesday</p>
-                                        <span>02:00 am - 06:00 pm</span>
+                                        <p><i className="far fa-clock"></i>Четверг</p>
+                                        <span>09:00 - 23:00</span>
+                                    </li>
+                                    <li>
+                                        <p><i className="far fa-clock"></i>Пятница</p>
+                                        <span>09:00 - 23:00</span>
+                                    </li>
+                                    <li>
+                                        <p><i className="far fa-clock"></i>Суббота</p>
+                                        <span>10:00 - 22:00</span>
+                                    </li>
+                                    <li>
+                                        <p><i className="far fa-clock"></i>Воскресенье</p>
+                                        <span>11:00 - 21:00</span>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                         <div className="col-xl-4 col-lg-4 col-md-6 col-12">
                             <div className="news_letter">
-                                <h5>Subscribe Newsletter</h5>
+                                <h5>Подписка</h5>
                                 <p>
-                                    Sign Up For Our Latest News & Articles.
-                                    We Wont Give You Spam Mails.
+                                    Подпишитесь на наши новости чтобы быть в курсе наших акций, событий и новостей.
                                 </p>
                                 <div className="contact-search">
                                     <form className="searchForm" method="get" action="0">
                                         <input className="searchTerm" placeholder="Your Email" autoComplete="off" />
-                                            <input type="submit" className="searchBtn" value="Subscribe!"/>
+                                            <input type="submit" className="searchBtn" />
                                     </form>
                                 </div>
                                 <ul className="follow_us">
                                     <li>
-                                        <p>Follow Us : </p>
+                                        <p>Сети, мессенджеры : </p>
                                     </li>
                                     <li>
                                         <a href="#"><i className="fab fa-twitter"></i></a>
@@ -385,13 +406,41 @@ const MainContainer = ({children, keywords, title}) => {
                                     <nav className="primary-menu">
                                         <div className="main-menu-area">
                                             <ul className="main-menu">
-                                                <li><a href="#">Home</a></li>
-                                                <li><a href="#">Food Menu</a></li>
-                                                <li><a href="#">Pages</a></li>
-                                                <li><a href="#">Blog</a></li>
-                                                <li><a href="#">Shop</a></li>
-                                                <li><a href="#">Elements</a></li>
-                                                <li><a href="#">Контакты</a></li>
+                                                <li>
+                                                    <Link href="/">
+                                                    <a>Главная</a>
+                                                    </Link>
+                                                </li>
+                                                <li>
+                                                    <Link href="/shop">
+                                                    <a>Магазин</a>
+                                                    </Link>
+                                                </li>
+                                                <li>
+                                                    <Link href="/shop">
+                                                    <a href="/blog">Блог</a>
+                                                    </Link>
+                                                </li>
+                                                <li>
+                                                    <Link href="/shop">
+                                                    <a>Объявления</a>
+                                                    </Link>
+                                                </li>
+                                                <li>
+                                                    <Link href="/about">
+                                                    <a>О нас</a>
+                                                    </Link>
+                                                </li>
+                                                <li>
+                                                    <Link href="/reklama">
+                                                    <a>Реклама</a>
+                                                    </Link>
+                                                </li>
+                                                <li>
+                                                    <Link href="/contact">
+                                                    <a>Контакты</a>
+                                                    </Link>
+                                                </li>
                                             </ul>
                                         </div>
                                     </nav>

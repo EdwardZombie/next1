@@ -199,6 +199,7 @@ aside {
     color: #fff; }
   .scrollToTop:hover {
     background: #fff;
+    text-decoration:none;
     transform: translateY(-5px); }
     .scrollToTop:hover i {
       color: #d60231; }
@@ -768,11 +769,13 @@ aside {
       margin: 10px 0 15px; }
       .post-item .post-item-inner .post-content .author-date a {
         margin-right: 30px;
+        color: #362725;
         padding: 3px 0;
         display: block; }
         .post-item .post-item-inner .post-content .author-date a:last-child {
           margin-right: 0; }
         .post-item .post-item-inner .post-content .author-date a:hover {
+          text-decoration:none;
           color: #d60231; }
         .post-item .post-item-inner .post-content .author-date a i {
           margin-right: 5px;
@@ -1489,7 +1492,7 @@ ul.codex.icon-style-list {
             right: 0;
             transform: translateY(-50%);
             font-weight: 400;
-            content: "\ea99" !important;
+            content: "*" !important;
             font-family: IcoFont !important; }
         .header-section .primary-menu .main-area .main-menu ul li:hover > ul {
           transform: scaleY(1); }
@@ -3906,7 +3909,7 @@ footer {
         justify-content: space-between;
         align-items: center;
         list-style: none;
-        padding: 19px 0;
+        padding: 3px 0;
         border-bottom: 1px dashed #fff3d3;
         border-width: 1px; }
         footer .opening-time ul li:first-child {

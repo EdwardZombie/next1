@@ -7,7 +7,7 @@ const myLoader = ({ src, width, quality }) => {
     return `http://prokansk.ru${src}?w=${width}&q=${quality || 75}`
 }
 
-export default function Blog5one({user}) {
+export default function bloglimontv({user}) {
     const {query} = useRouter()
     return (
         <MainContainer keywords={"sdfgsdfgsdfg"}>
@@ -19,7 +19,7 @@ export default function Blog5one({user}) {
                         <ul className="breadcrumb">
                             <li>
                                 <Link href="/">
-                                <a>Главная</a>
+                                    <a>Главная</a>
                                 </Link>
                             </li>
                             <li>{user.name}</li>
@@ -40,7 +40,7 @@ export default function Blog5one({user}) {
                                             <div className="post-thumb">
                                                 <Image
                                                     loader={myLoader}
-                                                    src={user.photo1}
+                                                    src="/image/catalog/blog/limon-tv-prokansk.jpg"
                                                     alt={user.name}
                                                     width={710}
                                                     height={470}
@@ -65,9 +65,7 @@ export default function Blog5one({user}) {
                                                     </ul>
                                                 </div>
 
-                                                <p>{user.content1}</p>
-
-                                                <p dangerouslySetInnerHTML={{ __html: user.content2 }} />
+                                                <p dangerouslySetInnerHTML={{ __html: user.content1 }} />
 
 
 
@@ -76,26 +74,26 @@ export default function Blog5one({user}) {
                                                     <cite><a href="#">...Мария Хантер</a></cite>
                                                 </blockquote>
 
-                                                    <div className="tags-section">
-                                                        <ul className="tags">
-                                                            <li><a href="#">Agency</a></li>
-                                                            <li><a href="#">Business</a></li>
-                                                            <li><a href="#">Personal</a></li>
-                                                        </ul>
-                                                        <div className="scocial-media">
-                                                            <a href="#" className="facebook">
-                                                                <i className="icofont-facebook" />
-                                                            </a>
-                                                            <a href="#" className="twitter">
-                                                                <i className="icofont-twitter" />
-                                                            </a>
-                                                            <a href="#" className="linkedin">
-                                                                <i className="icofont-linkedin" /></a>
-                                                            <a href="#" className="vimeo">
-                                                                <i className="icofont-vimeo" />
-                                                            </a>
-                                                        </div>
+                                                <div className="tags-section">
+                                                    <ul className="tags">
+                                                        <li><a href="#">Agency</a></li>
+                                                        <li><a href="#">Business</a></li>
+                                                        <li><a href="#">Personal</a></li>
+                                                    </ul>
+                                                    <div className="scocial-media">
+                                                        <a href="#" className="facebook">
+                                                            <i className="icofont-facebook" />
+                                                        </a>
+                                                        <a href="#" className="twitter">
+                                                            <i className="icofont-twitter" />
+                                                        </a>
+                                                        <a href="#" className="linkedin">
+                                                            <i className="icofont-linkedin" /></a>
+                                                        <a href="#" className="vimeo">
+                                                            <i className="icofont-vimeo" />
+                                                        </a>
                                                     </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -204,23 +202,23 @@ export default function Blog5one({user}) {
                                         <h4 className="title-border">Leave a Comment</h4>
                                         <div className="add-comment">
                                             <form action="#" method="post" id="commentform" className="comment-form">
-                                                <input name="name" type="text" placeholder="Name" />
-                                                    <input name="email" type="text" placeholder="Email" />
-                                                        <input name="url" type="text" placeholder="Subject" />
-                                                            <textarea id="comment-reply" name="comment" rows="5"
-                                                                      placeholder="Type Here Your Comment" />
-                                                            <p className="comment-form-cookies-consent">
-                                                                <input
-                                                                id="wp-comment-cookies-consent"
-                                                                name="wp-comment-cookies-consent" type="checkbox"
-                                                                />
-                                                                <label htmlFor="wp-comment-cookies-consent">Save
-                                                                my name, email, and website in this browser for the next
-                                                                time I comment.</label>
-                                                            </p>
-                                                            <button type="submit" className="food-btn">
-                                                                <span>send comment</span>
-                                                            </button>
+                                                <input name="name" type="text" value="" placeholder="Name" />
+                                                <input name="email" type="text" value="" placeholder="Email" />
+                                                <input name="url" type="text" value="" placeholder="Subject" />
+                                                <textarea id="comment-reply" name="comment" rows="5"
+                                                          placeholder="Type Here Your Comment" />
+                                                <p className="comment-form-cookies-consent">
+                                                    <input
+                                                        id="wp-comment-cookies-consent"
+                                                        name="wp-comment-cookies-consent" type="checkbox"
+                                                        value="yes" />
+                                                    <label htmlFor="wp-comment-cookies-consent">Save
+                                                        my name, email, and website in this browser for the next
+                                                        time I comment.</label>
+                                                </p>
+                                                <button type="submit" className="food-btn">
+                                                    <span>send comment</span>
+                                                </button>
                                             </form>
                                         </div>
                                     </div>
@@ -231,9 +229,9 @@ export default function Blog5one({user}) {
                                     <div className="widget widget-search">
                                         <div className="search-wrapper">
                                             <input type="text" name="s" placeholder="Your Search..." />
-                                                <button type="submit">
-                                                    <i className="icofont-search-2" />
-                                                </button>
+                                            <button type="submit">
+                                                <i className="icofont-search-2" />
+                                            </button>
                                         </div>
                                     </div>
 
@@ -420,7 +418,7 @@ export default function Blog5one({user}) {
 };
 
 export async function getServerSideProps({params}) {
-    const response = await fetch(`http://prokansk.ru/api/v1/5tv/${params.slug}`)
+    const response = await fetch(`http://prokansk.ru/api/v1/limontv/${params.slug}`)
     const user = await response.json()
     return {
         props: {user}, // will be passed to the page component as props
