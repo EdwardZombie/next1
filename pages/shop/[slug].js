@@ -5,7 +5,6 @@ import MainContainer from "/components/MainContainer";
 import Items from "/components/Items";
 import Pagination from "../../components/Pagination";
 
-
 const ItemsPage = () => {
 
     const [items, setItems] = useState([])
@@ -27,7 +26,6 @@ const ItemsPage = () => {
         }
         getItems()
     }, [slug])
-
 
     const lastItemIndex = currrentPage * itemsPerPage
     const firstItemIndex = lastItemIndex - itemsPerPage
