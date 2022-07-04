@@ -5,6 +5,7 @@ import MainContainer from "/components/MainContainer";
 import Items from "/components/Items";
 import Pagination from "../../components/Pagination";
 
+
 const ItemsPage = () => {
 
     const [items, setItems] = useState([])
@@ -22,9 +23,10 @@ const ItemsPage = () => {
             const res = await axios.get(`http://prokansk.ru/api/v1/shop/${slug}`)
             setItems(res.data)
             setLoading(false)
+
         }
         getItems()
-    }, [])
+    }, [slug])
 
 
     const lastItemIndex = currrentPage * itemsPerPage
@@ -37,13 +39,17 @@ const ItemsPage = () => {
 
 
     return (
-        <MainContainer keywords={"Объявления, 5 канал, Канск"} title={"Объявления Пятого канала"}>
+        <MainContainer
+            title={"Товары категории / *** / стр. " + currrentPage}
+            keywords={"Канск, интернет магазин, онлайн магазин, продукты, продуктовый магазин, доставка продуктов, на дом, страница " + currrentPage}
+            description={"Страница " + currrentPage + " с товарами кагории /***/ интернет магазина с доставкой в Канске и районе"}
+        >
             <section className="page-header style-2">
                 <div className="container">
                     <div className="page-title text-center">
                         <h3>Our Products page</h3>
                         <ul className="breadcrumb">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="/">Главная</a></li>
                             <li>Shop Page</li>
                         </ul>
                     </div>
@@ -55,7 +61,7 @@ const ItemsPage = () => {
                 <div className="container">
                     <div className="section-wrapper">
                         <div className="shop-title d-flex flex-wrap justify-content-between">
-                            <p>Showing 01 - 12 of 139 Results</p>
+                            <p>Showing 01 - 12 of {lastItemIndex} Results</p>
                             <div className="product-view-mode">
                                 <a className="active" data-target="grid"><i className="icofont-ghost" /></a>
                             </div>
@@ -80,7 +86,7 @@ const ItemsPage = () => {
             </div>
 
         </MainContainer>
-    );
-};
+    )
+}
 
 export default ItemsPage;
