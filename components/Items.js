@@ -42,7 +42,11 @@ const Items = ({ items, loading }) => {
                         <div className="product-content">
                             <div className="product-title">
                                 <span className="cat-name">Catagory Name</span>
-                                <h6><a href="#">{item.name}</a></h6>
+                                <h6>
+                                    <Link href={item.slug}>
+                                    <a>{item.name}</a>
+                                    </Link>
+                                </h6>
                                 <div className="rating">
                                     <i className="icofont-star" />
                                     <i className="icofont-star" />

@@ -7,19 +7,19 @@ import Pagination from "../../components/Pagination";
 
 const ItemsPage = () => {
 
-    const router = useRouter()
-    const { slug } = router.query
-
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(false)
     const [currrentPage, setCurrrentPage] = useState(1)
     const [itemsPerPage] = useState(12)
 
+    const router = useRouter()
+    const { slug } = router.query
+
     useEffect(() => {
+
         const getItems = async () => {
             setLoading(true)
             const res = await axios.get(`http://prokansk.ru/api/v1/shop/${slug}`)
-            console.log('sdfgsdfgsdfgsdfg - ', res.data)
             setItems(res.data)
             setLoading(false)
         }
