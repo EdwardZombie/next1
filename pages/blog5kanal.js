@@ -32,7 +32,11 @@ const Blog5Kanal = () => {
     const prevPage = () => setCurrrentPage(prev => prev-1)
 
     return (
-        <MainContainer keywords={"Объявления, 5 канал, Канск"} title={"Объявления Пятого канала"}>
+        <MainContainer
+            title={"Бегущая строка телеканала Канск 5 канал стр. " + currrentPage}
+            keywords={"Объявления, Канск 5 канал, бегущая строка, Канск, страница " + currrentPage}
+            description={"Страница " + currrentPage + " бегущей строки от телеканала Канск 5 канал"}
+        >
             <section className="page-header style-2">
                 <div className="container">
                     <div className="page-title text-center">
@@ -62,8 +66,7 @@ const Blog5Kanal = () => {
                 paginate={paginate}
                 currentBlog={currentBlog}
             />
-            <button className="btn btn-primary" onClick={prevPage}>Prev</button>
-            <button className="btn btn-primary" onClick={nextPage}>Next</button>
+
                     </div>
                 </div>
             </section>

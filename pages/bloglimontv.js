@@ -32,18 +32,22 @@ const bloglimontv = () => {
     const prevPage = () => setCurrrentPage(prev => prev-1)
 
     return (
-        <MainContainer keywords={"Объявления, 5 канал, Канск"} title={"Объявления Пятого канала"}>
+        <MainContainer
+            title={"Бегущая строка Лимон ТВ стр. " + currrentPage}
+            keywords={"Объявления, Лимон ТВ, бегущая строка, Канск, страница " + currrentPage}
+            description={"Страница " + currrentPage + " бегущей строки от телеканала Лимон ТВ город Канск"}
+        >
             <section className="page-header style-2">
                 <div className="container">
                     <div className="page-title text-center">
-                        <h3>Канск 5 канал объявления</h3>
+                        <h3>Объявления телеканала Лимон ТВ</h3>
                         <ul className="breadcrumb">
                             <li>
                                 <Link href="/">
                                     <a>Главная</a>
                                 </Link>
                             </li>
-                            <li>Бегущая строка телеканала Канск 5 канал</li>
+                            <li>Бегущая строка телеканала Лимон ТВ</li>
                         </ul>
                     </div>
                 </div>
@@ -62,8 +66,6 @@ const bloglimontv = () => {
                             paginate={paginate}
                             currentBlog={currentBlog}
                         />
-                        <button className="btn btn-primary" onClick={prevPage}>Prev</button>
-                        <button className="btn btn-primary" onClick={nextPage}>Next</button>
                     </div>
                 </div>
             </section>
