@@ -16,7 +16,7 @@ const MainContainer = ({children, keywords, title, description}) => {
                 <title>{title}</title>
                 <meta name="keywords" content={keywords} />
                 <meta name="description" content={description} />
-                <meta name="author" content="Веб студия Zoomcode.ru" />
+                <meta name="author" content="Эдуард Чупров" />
 
 
 

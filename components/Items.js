@@ -41,7 +41,7 @@ const Items = ({ items, loading }) => {
                         </div>
                         <div className="product-content">
                             <div className="product-title">
-                                <span className="cat-name">Catagory Name</span>
+                                <span className="cat-name">{item.category}</span>
                                 <h6>
                                     <Link href={item.slug}>
                                     <a>{item.name}</a>
