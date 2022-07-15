@@ -12,9 +12,20 @@ function List({ items, fallback }) {
             return <li key={item.id}>
             <Link href={`/shop/${item.slug}`}>
                 <a>
-                {item.name}
+                    {item.name}
                 </a>
             </Link>
+                <ul>
+                {item.children.map(sub =>
+                <li>
+                    <Link href={`/shop/${item.slug}/${sub.slug}`} key={sub.id}>
+                        <a>
+                    {sub.name}
+                        </a>
+                    </Link>
+                </li>
+                    )}
+                </ul>
             </li>;
         });
     }
