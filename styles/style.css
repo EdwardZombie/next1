@@ -2182,7 +2182,7 @@ ul.codex.icon-style-list {
   @media (min-width: 1200px) {
     .contact-us .contact-thumb img {
       position: absolute;
-      top: -80px; } }
+      top: 80px; } }
 
 /*@@@@@@@@@@@@@@   Team Section Start Here  @@@@@@@@@@@@@@@@@*/
 .team-section {
@@ -2832,15 +2832,16 @@ ul.codex.icon-style-list {
   padding: 60px 30px 0; }
   @media (min-width: 1200px) {
     .contact-information .section-wrapper {
-      margin-bottom: -40px;
+      margin-bottom: 40px;
       z-index: 1; } }
   .contact-information .section-wrapper .col-12:first-child {
     margin-bottom: 40px; }
     @media (min-width: 992px) {
       .contact-information .section-wrapper .col-12:first-child {
-        margin-bottom: 0px;
-        background: url(../public/assets/images/contac/bg.png) no-repeat;
-        background-position: bottom left; } }
+        margin-bottom: 10px;
+        /*background: url(../public/assets/images/contac/bg.png) no-repeat;*/
+        /*background-position: bottom left;*/
+      } }
   .contact-information .section-wrapper h5 {
     margin-bottom: 35px;
     line-height: 30px; }
@@ -2886,10 +2887,11 @@ ul.codex.icon-style-list {
       line-height: 24px;
       margin: 0; }
 .contact-information.home-4 {
-  background: url(../public/assets/images/contac/bg.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; }
+  /*background: url(../public/assets/images/contac/bg.png);*/
+  /*background-position: center;*/
+  /*background-repeat: no-repeat;*/
+  /*background-size: cover; */
+}
   .contact-information.home-4 .section-header span {
     color: #d60231;
     font-weight: 600; }

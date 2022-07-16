@@ -2902,9 +2902,9 @@ ul.codex.icon-style-list {
     margin-bottom: 40px; }
     @media (min-width: 992px) {
       .contact-information .section-wrapper .col-12:first-child {
-        margin-bottom: 0px;
-        background: url(../../assets/images/contac/bg.png) no-repeat;
-        background-position: bottom left; } }
+        margin-bottom: 50px;
+
+         } }
   .contact-information .section-wrapper h5 {
     margin-bottom: 35px;
     line-height: 30px; }
@@ -2950,7 +2950,7 @@ ul.codex.icon-style-list {
       line-height: 24px;
       margin: 0; }
 .contact-information.home-4 {
-  background: url(../../assets/images/contac/bg/01.jpg);
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
