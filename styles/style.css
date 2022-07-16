@@ -1440,7 +1440,9 @@ ul.codex.icon-style-list {
       .header-section .primary-menu .main-area .main-menu ul li {
         padding: 0; }
         .header-section .primary-menu .main-area .main-menu ul li.active > a, .header-section .primary-menu .main-area .main-menu ul li:hover > a {
-          color: #d60231; }
+          color: #d60231;
+          background: #ffffff;
+        }
         .header-section .primary-menu .main-area .main-menu ul li a {
           padding: 40px 15px;
           font-weight: 500;

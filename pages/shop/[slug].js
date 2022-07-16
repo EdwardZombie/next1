@@ -36,9 +36,10 @@ const ItemsPage = () => {
     const prevPage = () => setCurrrentPage(prev => prev-1)
 
 
+    console.log(currentItem)
     return (
         <MainContainer
-            title={"Товары категории / *** / стр. " + currrentPage}
+            title={"Товары категории  стр. " + currrentPage}
             keywords={"Канск, интернет магазин, онлайн магазин, продукты, продуктовый магазин, доставка продуктов, на дом, страница " + currrentPage}
             description={"Страница " + currrentPage + " с товарами кагории /***/ интернет магазина с доставкой в Канске и районе"}
         >

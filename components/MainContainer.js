@@ -58,9 +58,14 @@ const MainContainer = ({children, keywords, title, description}) => {
                         <div className="mobile-menu-area-inner">
                             <ul>
                                 <li className="active">
-                                    <a href="/">Главная</a>
+                                    <Link href="/">
+                                    <a>Главная</a>
+                                    </Link>
                                 </li>
-                                <li><a href="/shop">Магазин</a>
+                                <li>
+                                    <Link href="/shop">
+                                    <a>Магазин</a>
+                                    </Link>
                                     <ul>
                                         <MainCategoryMenu></MainCategoryMenu>
                                     </ul>
@@ -68,20 +73,38 @@ const MainContainer = ({children, keywords, title, description}) => {
 
 
                                 <li>
-                                    <a href="#">Блог</a>
+                                    <Link href="#">
+                                    <a>Статьи</a>
+                                    </Link>
                                     <ul>
-                                        <li><a href="blog.html">Blog Style 1</a></li>
+                                        <li>
+                                            <Link href="#">
+                                            <a>Наш блог</a>
+                                            </Link>
+                                        </li>
                                         <li>
                                             <Link href="/blog5kanal">
                                             <a>Объявления 5 канал</a>
                                             </Link>
                                         </li>
-                                        <li><a href="blog-single.html">Объявления ЛимонТВ</a></li>
+                                        <li>
+                                            <Link href={'/bloglimontv'}>
+                                            <a>Объявления ЛимонТВ</a>
+                                            </Link>
+                                        </li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Блог</a></li>
+                                <li>
+                                    <Link href="/about">
+                                    <a>О нас</a>
+                                    </Link>
+                                </li>
 
-                                <li><a href="/contact">Контакты</a></li>
+                                <li>
+                                    <Link href="/contact">
+                                    <a>Контакты</a>
+                                    </Link>
+                                </li>
                             </ul>
                         </div>
                     </div>
