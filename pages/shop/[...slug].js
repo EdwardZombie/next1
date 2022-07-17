@@ -37,13 +37,24 @@ const ItemsPage = () => {
     const nextPage = () => setCurrrentPage(prev => prev+1)
     const prevPage = () => setCurrrentPage(prev => prev-1)
 
-
     return (
         <MainContainer
             title={"Товары категории / *** / стр. " + currrentPage}
             keywords={"Канск, интернет магазин, онлайн магазин, продукты, продуктовый магазин, доставка продуктов, на дом, страница " + currrentPage}
             description={"Страница " + currrentPage + " с товарами кагории /***/ интернет магазина с доставкой в Канске и районе"}
         >
+            <section className="page-header style-2">
+                <div className="container">
+                    <div className="page-title text-center">
+                        <h3>Our Products page</h3>
+                        <ul className="breadcrumb">
+                            <li><a href="/">Главная</a></li>
+                            <li>Shop Page</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
 
             <div className="shop-page single padding-tb bg-fa">
                 <div className="container">

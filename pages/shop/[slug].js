@@ -4,6 +4,7 @@ import axios from "axios";
 import MainContainer from "/components/MainContainer";
 import Items from "/components/Items";
 import Pagination from "../../components/Pagination";
+import TitleCategory from "../../components/TitleCategory"
 
 const ItemsPage = () => {
 
@@ -20,6 +21,7 @@ const ItemsPage = () => {
         const getItems = async () => {
             setLoading(true)
             const res = await axios.get(`http://prokansk.ru/api/v1/shop/${slug}`)
+            // console.log(res.data[0])
             setItems(res.data)
             setLoading(false)
 
@@ -35,8 +37,8 @@ const ItemsPage = () => {
     const nextPage = () => setCurrrentPage(prev => prev+1)
     const prevPage = () => setCurrrentPage(prev => prev-1)
 
+    // const categoryMain = items[0]['category_main']
 
-    console.log(currentItem)
     return (
         <MainContainer
             title={"Товары категории  стр. " + currrentPage}
@@ -50,10 +52,7 @@ const ItemsPage = () => {
                 <div className="container">
                     <div className="section-wrapper">
                         <div className="shop-title d-flex flex-wrap justify-content-between">
-                            <p>Showing 01 - 12 of {lastItemIndex} Results</p>
-                            <div className="product-view-mode">
-                                <a className="active" data-target="grid"><i className="icofont-ghost" /></a>
-                            </div>
+                            <TitleCategory items={currentItem} loading={loading} />
                         </div>
 
                         <div className="shop-product-wrap grid row">
