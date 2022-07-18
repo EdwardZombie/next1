@@ -58,7 +58,7 @@ const ItemsPage = () => {
                         <div className="shop-product-wrap grid row">
 
 
-            <Items items={currentItem} loading={loading} />
+                            <Items items={currentItem} loading={loading} />
 
                         </div>
                         <div className="shop-product-wrap grid row">
