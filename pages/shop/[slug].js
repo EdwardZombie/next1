@@ -52,7 +52,7 @@ const ItemsPage = () => {
                 <div className="container">
                     <div className="section-wrapper">
                         <div className="shop-title d-flex flex-wrap justify-content-between">
-                            <TitleCategory items={currentItem} loading={loading} />
+                            <h1><TitleCategory items={currentItem} loading={loading} /></h1>
                         </div>
 
                         <div className="shop-product-wrap grid row">

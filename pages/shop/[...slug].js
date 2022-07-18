@@ -4,6 +4,8 @@ import axios from "axios";
 import MainContainer from "/components/MainContainer";
 import Items from "/components/Items";
 import Pagination from "../../components/Pagination";
+import TitleCategory from "../../components/TitleCategory"
+import TitleSubCategory from "../../components/TitleSubCategory"
 
 const ItemsPage = () => {
 
@@ -56,10 +58,8 @@ const ItemsPage = () => {
                 <div className="container">
                     <div className="section-wrapper">
                         <div className="shop-title d-flex flex-wrap justify-content-between">
-                            <p>Showing 01 - 12 of {lastItemIndex} Results</p>
-                            <div className="product-view-mode">
-                                <a className="active" data-target="grid"><i className="icofont-ghost" /></a>
-                            </div>
+                            <h1><TitleSubCategory items={currentItem} loading={loading} /></h1>
+                            <h3><TitleCategory items={currentItem} loading={loading} /></h3>
                         </div>
 
                         <div className="shop-product-wrap grid row">

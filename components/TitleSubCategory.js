@@ -1,12 +1,12 @@
 import React from 'react';
 
-const TitleCategory = ({ items, loading }) => {
+const TitleSubCategory = ({ items, loading }) => {
     if(loading) {
         return <h3>Загрузка...</h3>
     }
     const ti = items.map((item, index) => {
         if(index == 0){
-            var title = item['category_main']
+            var title = item['category']
             return title
         }
     })
@@ -14,4 +14,4 @@ const TitleCategory = ({ items, loading }) => {
     return ti
 }
 
-export default TitleCategory;
+export default TitleSubCategory;
